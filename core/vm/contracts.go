@@ -124,6 +124,15 @@ func init() {
 	for k := range PrecompiledContractsBerlin {
 		PrecompiledAddressesBerlin = append(PrecompiledAddressesBerlin, k)
 	}
+	// Add BLS precompiles to the PrecompiledContractsBerlin
+	for k, v := range PrecompiledContractsBLS {
+		PrecompiledContractsBerlin[k] = v
+	}
+	println("BLS precompile address active")
+	println(`  A L L   Y O U R   B A S E   A R E   B E L O N G   T O   Y O U
+ /_| |_| |_||_||_||_| || |_||_||_||_| ||_||_||_||_||_||_||_|| |
+(   |   |   |  |   |  |(   |   |   |  |(   |   |   |   |   |   |
+`)
 }
 
 // ActivePrecompiles returns the precompiles enabled with the current configuration.
